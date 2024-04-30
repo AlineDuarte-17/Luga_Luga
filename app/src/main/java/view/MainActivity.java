@@ -1,6 +1,7 @@
 package view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -14,43 +15,35 @@ import android.widget.Toast;
 import com.example.lugaluga.R;
 
 import java.time.Instant;
+import java.util.List;
+
+import model.Produto;
+import view.adapter.AdapterProduto;
 
 public class MainActivity extends AppCompatActivity {
 
-    private ListView ListCidade;
+    private RecyclerView recyclerView;
 
-    private String[] cidades = {
-            "São Carlos", "Araraquara", "Ibaté", "Ribeirã Bonito", "Dourado",
-            "Descalvado", "Porto Ferreira", "Santa Rita do Passa Quatro", "Tambaú",
-            "Pirassununga", "Ribeirão Preto", "Jaboticabal", "Franca", "São Paulo",
-            "Itirapina", "Brotas", "Jaú", "Bauru", "Rio Claro"
-    };
+    private AdapterProduto adapterProduto;
+
+    private List<Produto> produtoList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ListCidade = findViewById(R.id.ListaNomes);
+        recyclerView.findViewById(R.id.listaProdutos);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(
+    }
 
-                getApplicationContext(),
-                android.R.layout.simple_list_item_1,
-                android.R.id.text1,
-                cidades
-        );
+    public void CriarListaProdutos(){
 
-        ListCidade.setAdapter(adapter);
-
-        ListCidade.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                String itemSelecionado = ListCidade.getItemAtPosition(position).toString();
-                Toast.makeText(getApplicationContext(), itemSelecionado, Toast.LENGTH_LONG).show();
-
-            }
-        });
+        Produto produto = new Produto("Iphone 13",
+                "200.00",
+                "Iphone 64gb",
+                "disponivel",
+                "10")
 
     }
 }

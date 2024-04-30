@@ -4,7 +4,7 @@ public class Produto {
 
     private String nome;
 
-    private Double preco;
+    private double preco;
 
     private String descricao;
 
@@ -12,7 +12,7 @@ public class Produto {
 
     private double quantidade;
 
-    public Produto(String nome, Double preco, String descricao, String status, double quantidade) {
+    public Produto(String nome, double preco, String descricao, String status, double quantidade) {
         this.nome = nome;
         this.preco = preco;
         this.descricao = descricao;
@@ -28,11 +28,11 @@ public class Produto {
         this.nome = nome;
     }
 
-    public Double getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(Double preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
     }
 
