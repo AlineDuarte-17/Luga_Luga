@@ -27,8 +27,6 @@ public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHold
 
 
 
-
-
     public AdapterProduto.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View listaProdutos = LayoutInflater.from(parent.getContext())

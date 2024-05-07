@@ -1,6 +1,11 @@
 package model;
 
-public class Produto {
+import android.os.Parcel;
+import android.os.Parcelable;
+
+import androidx.annotation.NonNull;
+
+public class Produto implements Parcelable {
 
     private String nome;
 
@@ -19,6 +24,26 @@ public class Produto {
         this.status = status;
         this.quantidade = quantidade;
     }
+
+    protected Produto(Parcel in) {
+        nome = in.readString();
+        preco = in.readDouble();
+        descricao = in.readString();
+        status = in.readString();
+        quantidade = in.readDouble();
+    }
+
+    public static final Creator<Produto> CREATOR = new Creator<Produto>() {
+        @Override
+        public Produto createFromParcel(Parcel in) {
+            return new Produto(in);
+        }
+
+        @Override
+        public Produto[] newArray(int size) {
+            return new Produto[size];
+        }
+    };
 
     public String getNome() {
         return nome;
@@ -59,4 +84,19 @@ public class Produto {
     public void setQuantidade(double quantidade) {
         this.quantidade = quantidade;
     }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(@NonNull Parcel dest, int flags) {
+        dest.writeString(nome);
+        dest.writeDouble(preco);
+        dest.writeString(descricao);
+        dest.writeString(status);
+        dest.writeDouble(quantidade);
+    }
+
 }
