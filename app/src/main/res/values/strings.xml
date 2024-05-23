@@ -11,4 +11,76 @@
     <string name="tv_descricao">The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested.</string>
     <string name="tv_qtdProduto">10pc</string>
     <string name="btn_aluga">Alugar</string>
+    <string name="hint_CPF">CPF</string>
+    <string name="hint_nome">Nome</string>
+    <string name="hint_data">Data de nascimento</string>
+    <string name="hint_logradouro">Logradouro</string>
+    <string name="hint_CEP">CEP</string>
+    <string name="hint_num">N°</string>
+    <string name="hint_comp">Complemento</string>
+    <string name="hint_bairro">Bairro</string>
+    <string name="hint_cidade">Cidade</string>
+    <string name="hint_UF">UF</string>
+    <string name="hint_cadastrar">Cadastrar</string>
+    <string name="hint_telefone">Telefone</string>
+
+
+    <string-array name="uf_cadastro">
+
+        <item>AC</item>
+        <item>AL</item>
+        <item>AP</item>
+        <item>AM</item>
+        <item>BA</item>
+        <item>CE</item>
+        <item>DF</item>
+        <item>ES</item>
+        <item>GO</item>
+        <item>MA</item>
+        <item>MT</item>
+        <item>MS</item>
+        <item>MG</item>
+        <item>PA</item>
+        <item>PB</item>
+        <item>PR</item>
+        <item>PE</item>
+        <item>PI</item>
+        <item>RJ</item>
+        <item>RN</item>
+        <item>RS</item>
+        <item>RO</item>
+        <item>RR</item>
+        <item>SC</item>
+        <item>SP</item>
+        <item>SE</item>
+        <item>TO</item>
+
+    </string-array>
+    <string name="title_activity_main2">MainActivity2</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_informacao">Mais informação</string>
+    <string name="menu_solicitacao">Solicitação</string>
+    <string name="menu_produtos">Produtos</string>
+    <string name="menu_acompanhamento">Acompanhamento</string>
+    <string name="menu_atendimento">Atendimento</string>
+    <string name="menu_sobre">Sobre nós</string>
+    <string name="menu_conosco">Fale conosco</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="hint_assunto">Assunto</string>
+    <string name="hint_mensagem">Mensagem</string>
+    <string name="hint_enviar">Enviar</string>
+    <string name="hint_telefone2"> Caso aconteça algum problema ou precisar de ajuda entre em contato com a empresa </string>
+    <string name="hint_telefone3">Telefone 19 99824-6708</string>
+
 </resources>

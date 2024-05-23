@@ -1,4 +1,4 @@
-package view.adapter;
+package com.example.lugaluga.view.adapter;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,7 +12,7 @@ import com.example.lugaluga.R;
 
 import java.util.List;
 
-import model.Produto;
+import com.example.lugaluga.model.Produto;
 
 public class AdapterProduto extends RecyclerView.Adapter<AdapterProduto.ViewHolder> {
 

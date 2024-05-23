@@ -1,4 +1,4 @@
-package view;
+package com.example.lugaluga.view;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +15,7 @@ import android.widget.Toast;
 
 import com.example.lugaluga.R;
 
-import model.Produto;
+import com.example.lugaluga.model.Produto;
 
 public class ProdutoActivity extends AppCompatActivity {
 
@@ -44,6 +44,11 @@ public class ProdutoActivity extends AppCompatActivity {
 
         produto = getIntent().getExtras().getParcelable("produto");
 
+        if (produto.getStatus().equals("Indisponivel")){
+            btnAlugar.setEnabled(false);
+            btnAlugar.setText("Indisponivel");
+        }
+
         nomeProduto.setText(produto.getNome());
         qtdProduto.setText(String.valueOf(produto.getQuantidade()));
         precoProduto.setText(String.valueOf(produto.getPreco()));
@@ -59,6 +64,9 @@ public class ProdutoActivity extends AppCompatActivity {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
                         Toast.makeText(getApplicationContext(), "Conclúído", Toast.LENGTH_SHORT).show();
+                        btnAlugar.setText("Solicitado");
+                        btnAlugar.setBackgroundColor(getColor(R.color.yellow));
+                        btnAlugar.setEnabled(false);
 
                     }
                 });

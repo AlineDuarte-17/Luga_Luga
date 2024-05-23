@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.lugaluga.view.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_produtos"
+        android:name="com.example.lugaluga.view.ProdutosFragment"
+        android:label="@string/menu_produtos"
+        tools:layout="@layout/fragment_produtos"/>
+
+    <fragment
+        android:id="@+id/nav_solicitacao"
+        android:name="com.example.lugaluga.view.SolicitacaoFragment"
+        android:label="@string/menu_solicitacao"
+        tools:layout="@layout/fragment_solicitacao"/>
+
+    <fragment
+        android:id="@+id/nav_acompanhamento"
+        android:name="com.example.lugaluga.view.AcompanhamentoFragment"
+        android:label="@string/menu_acompanhamento"
+        tools:layout="@layout/fragment_acompanhamento"/>
+
+    <fragment
+        android:id="@+id/nav_atendimento"
+        android:name="com.example.lugaluga.view.AtendimentoFragment"
+        android:label="@string/menu_atendimento"
+        tools:layout="@layout/fragment_atendimento"/>
+
+    <fragment
+        android:id="@+id/nav_informacao"
+        android:name="com.example.lugaluga.view.InformacaoFragment"
+        android:label="@string/menu_informacao"
+        tools:layout="@layout/fragment_informacao"/>
+
+    <fragment
+        android:id="@+id/nav_sobre"
+        android:name="com.example.lugaluga.view.SobreFragment"
+        android:label="@string/menu_sobre"
+        tools:layout="@layout/fragment_sobre"/>
+
+    <fragment
+        android:id="@+id/nav_conosco"
+        android:name="com.example.lugaluga.view.ConoscoFragment"
+        android:label="@string/menu_conosco"
+        tools:layout="@layout/fragment_conosco"/>
+
+
+</navigation>
