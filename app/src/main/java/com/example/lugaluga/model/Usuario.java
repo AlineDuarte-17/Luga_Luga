@@ -19,7 +19,7 @@ public class Usuario implements Parcelable{
 
     private String logradouro;
 
-    private int numero;
+    private String numero;
 
     private String complemento;
 
@@ -27,7 +27,7 @@ public class Usuario implements Parcelable{
 
     private int telefone;
 
-    private String email;
+   private String email;
 
     private String senha;
 
@@ -43,7 +43,7 @@ public class Usuario implements Parcelable{
         cidade = in.readString();
         uf = in.readString();
         logradouro = in.readString();
-        numero = in.readInt();
+        numero = in.readString();
         complemento = in.readString();
         bairro = in.readString();
         telefone = in.readInt();
@@ -60,7 +60,7 @@ public class Usuario implements Parcelable{
         dest.writeString(cidade);
         dest.writeString(uf);
         dest.writeString(logradouro);
-        dest.writeInt(numero);
+        dest.writeString(numero);
         dest.writeString(complemento);
         dest.writeString(bairro);
         dest.writeInt(telefone);
@@ -141,11 +141,11 @@ public class Usuario implements Parcelable{
         this.logradouro = logradouro;
     }
 
-    public int getNumero() {
+    public String getNumero() {
         return numero;
     }
 
-    public void setNumero(int numero) {
+    public void setNumero(String numero) {
         this.numero = numero;
     }
 
@@ -189,7 +189,7 @@ public class Usuario implements Parcelable{
         this.senha = senha;
     }
 
-    public Usuario(String nome, String CPF, String data, String CEP, String cidade, String uf, String logradouro, int numero, String complemento, String bairro, int telefone, String email, String senha) {
+    public Usuario(String nome, String CPF, String data, String CEP, String cidade, String uf, String logradouro, String numero, String complemento, String bairro, int telefone, String email, String senha) {
         this.nome = nome;
         this.CPF = CPF;
         this.data = data;

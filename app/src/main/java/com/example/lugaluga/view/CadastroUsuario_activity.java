@@ -6,10 +6,14 @@ import androidx.appcompat.widget.Toolbar;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import com.example.lugaluga.R;
+import com.example.lugaluga.controller.UsuarioController;
+import com.example.lugaluga.model.Usuario;
 import com.google.android.material.textfield.TextInputLayout;
 
 import java.util.regex.Matcher;
@@ -17,15 +21,11 @@ import java.util.regex.Pattern;
 
 public class CadastroUsuario_activity extends AppCompatActivity {
 
-    private Spinner spinneruf;
+    private Spinner spinnerUf;
 
-    private TextInputLayout inputEmail;
+    private TextInputLayout input_cpf, input_nome, input_data, input_cep, input_cidade,
+    input_logradouro, input_numero, input_complemento, input_bairro, inputEmail, input_senha, btnCadastrar;
 
-    private TextInputLayout input_cpf;
-
-    private TextInputLayout input_cep;
-
-    private TextInputLayout input_data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,17 @@ public class CadastroUsuario_activity extends AppCompatActivity {
         setSupportActionBar(myToolbar);
 
         input_cpf = findViewById(R.id.input_cpf);
+        input_nome = findViewById(R.id.input_nome);
+        input_data = findViewById(R.id.input_data);
+        input_cep = findViewById(R.id.input_cep);
+        input_cidade = findViewById(R.id.input_cidade);
+        input_logradouro = findViewById(R.id.input_logradouro);
+        input_numero = findViewById(R.id.input_numero);
+        input_complemento = findViewById(R.id.input_complemento);
+        input_bairro = findViewById(R.id.input_bairro);
+        inputEmail = findViewById(R.id.input_email);
+        input_senha = findViewById(R.id.input_senha);
+        btnCadastrar = findViewById(R.id.btn_cadastrar);
 
         input_cpf.getEditText().addTextChangedListener(new TextWatcher() {
 
@@ -96,9 +107,7 @@ public class CadastroUsuario_activity extends AppCompatActivity {
 
 
 
-
-
-        spinneruf = (Spinner) findViewById(R.id.spinner_uf);
+        spinnerUf = (Spinner) findViewById(R.id.spinner_uf);
 
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                 this,
@@ -106,7 +115,40 @@ public class CadastroUsuario_activity extends AppCompatActivity {
                 android.R.layout.simple_spinner_item
         );
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinneruf.setAdapter(adapter);
+        spinnerUf.setAdapter(adapter);
+
+        btnCadastrar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                UsuarioController crud = new UsuarioController(getApplicationContext());
+                Usuario usuario = new Usuario();
+                usuario.setNome(input_nome.getEditText().getText().toString());
+                usuario.setCPF(input_cpf.getEditText().getText().toString());
+                usuario.setData(input_data.getEditText().getText().toString());
+                usuario.setCEP(input_cep.getEditText().getText().toString());
+                usuario.setCidade(input_cidade.getEditText().getText().toString());
+                usuario.setUf(spinnerUf.getSelectedItem().toString());
+                usuario.setLogradouro(input_logradouro.getEditText().getText().toString());
+                usuario.setNumero(input_numero.getEditText().getText().toString());
+                usuario.setComplemento(input_complemento.getEditText().getText().toString());
+                usuario.setBairro(input_bairro.getEditText().getText().toString());
+                usuario.setEmail(inputEmail.getEditText().getText().toString());
+                usuario.setSenha(input_senha.getEditText().getText().toString());
+                usuario.setData(input_data.getEditText().getText().toString());
+
+                String resultado;
+
+                resultado = crud.insereDados(usuario.getNome(), usuario.getCPF(),
+                        usuario.getData(), usuario.getCEP(), usuario.getCidade(),
+                        usuario.getUf(), usuario.getLogradouro(), usuario.getNumero(),
+                        usuario.getComplemento(), usuario.getBairro(), 0, usuario.getEmail(),
+                        usuario.getSenha());
+
+                Toast.makeText(getApplicationContext(),resultado, Toast.LENGTH_LONG).show();
+
+            }
+        });
 
         inputEmail = findViewById(R.id.input_email);
 
